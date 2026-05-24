@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. [Your Name] — Mathematics & Data Science</title>
+  <title>Dr. Aaron Rapp — Mathematics & Data Science</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
   <style>
@@ -119,13 +119,8 @@
       transition: opacity 0.2s;
     }
 
-    nav a:hover, nav a.active {
-      color: var(--accent);
-    }
-
-    nav a:hover::before, nav a.active::before {
-      opacity: 1;
-    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav a:hover::before, nav a.active::before { opacity: 1; }
 
     .sidebar-contact {
       margin-top: auto;
@@ -143,9 +138,7 @@
     .sidebar-contact a:hover { color: var(--accent); }
 
     /* ── MAIN ── */
-    main {
-      padding: 0;
-    }
+    main { padding: 0; }
 
     /* ── HERO ── */
     .hero {
@@ -260,7 +253,6 @@
     }
 
     .about-body p + p { margin-top: 1.2em; }
-
     .about-body strong { color: var(--ink); font-weight: 600; }
 
     .about-grid {
@@ -305,7 +297,6 @@
       display: grid;
       grid-template-columns: 3rem 1fr;
       gap: 1rem;
-      transition: background 0.2s;
     }
 
     .pub-item:last-child { border-bottom: none; }
@@ -412,9 +403,7 @@
       line-height: 1.6;
     }
 
-    .cv-download {
-      margin-top: 2rem;
-    }
+    .cv-download { margin-top: 2rem; }
 
     .btn {
       display: inline-flex;
@@ -433,17 +422,10 @@
       transition: background 0.2s, color 0.2s;
     }
 
-    .btn:hover {
-      background: transparent;
-      color: var(--accent);
-    }
+    .btn:hover { background: transparent; color: var(--accent); }
 
     /* ── TEACHING ── */
-    .teaching-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .teaching-grid { display: flex; flex-direction: column; gap: 0; }
 
     .course-item {
       display: grid;
@@ -546,9 +528,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 760px) {
-      .site-wrapper {
-        grid-template-columns: 1fr;
-      }
+      .site-wrapper { grid-template-columns: 1fr; }
       .sidebar {
         position: relative;
         height: auto;
@@ -578,10 +558,7 @@
       transform: translateY(16px);
       transition: opacity 0.55s ease, transform 0.55s ease;
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .fade-in.visible { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
@@ -591,11 +568,11 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div>
-      <div class="sidebar-monogram">YN</div>
+      <div class="sidebar-monogram">AR</div>
     </div>
     <div>
-      <div class="sidebar-name">Dr. Your Name</div>
-      <div class="sidebar-role">Associate Professor<br>Mathematics & Data Science</div>
+      <div class="sidebar-name">Dr. Aaron Rapp</div>
+      <div class="sidebar-role">Assistant Professor<br>Mathematics &amp; Data Science</div>
     </div>
     <nav>
       <a href="#about">About</a>
@@ -605,10 +582,10 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="sidebar-contact">
-      <a href="mailto:you@university.edu">you@university.edu</a><br>
+      <a href="mailto:rappa@wssu.edu">rappa@wssu.edu</a><br>
       Department of Mathematics<br>
-      University Name<br>
-      City, State
+      Winston-Salem State University<br>
+      Winston-Salem, NC
     </div>
   </aside>
 
@@ -618,18 +595,20 @@
     <!-- HERO -->
     <div class="hero fade-in">
       <div class="hero-eyebrow">Mathematics &amp; Data Science</div>
-      <h1>Dr. Your Full Name</h1>
+      <h1>Dr. Aaron Rapp</h1>
       <p class="hero-bio">
-        Associate Professor at the Department of Mathematics, University Name.
-        My research lies at the intersection of <strong>applied mathematics</strong> and
-        <strong>statistical learning theory</strong>, with a focus on high-dimensional
-        data, optimization, and uncertainty quantification.
+        Assistant Professor of Mathematics at <strong>Winston-Salem State University</strong>,
+        working at the intersection of <strong>numerical analysis</strong> and
+        <strong>biomedical data science</strong>. My work spans discontinuous Galerkin methods
+        for PDEs, machine learning for health equity, and the development of data science
+        education at underserved institutions.
       </p>
       <div class="hero-tags">
-        <span class="tag">Machine Learning Theory</span>
-        <span class="tag">High-Dimensional Statistics</span>
-        <span class="tag">Optimization</span>
-        <span class="tag">Probabilistic Methods</span>
+        <span class="tag">Discontinuous Galerkin Methods</span>
+        <span class="tag">Biomedical Data Science</span>
+        <span class="tag">Finite Element Methods</span>
+        <span class="tag">Health Equity &amp; AI/ML</span>
+        <span class="tag">Numerical PDEs</span>
       </div>
     </div>
 
@@ -642,39 +621,43 @@
       </div>
       <div class="about-body">
         <p>
-          I am an Associate Professor in the Department of Mathematics at University Name,
-          where I have been a faculty member since 2018. Before joining University Name,
-          I completed my Ph.D. at [Graduate Institution] under the supervision of
-          Professor [Advisor Name], and held a postdoctoral fellowship at [Institution].
+          I am an Assistant Professor of Mathematics at Winston-Salem State University,
+          where I joined the faculty in 2025. Previously, I served as Assistant Professor
+          of Mathematics and Data Science Program Coordinator at the University of the
+          Virgin Islands (2020–2025). I earned my Ph.D. in Computational Mathematics
+          from the University of North Carolina at Greensboro in 2020.
         </p>
         <p>
-          My research develops rigorous mathematical frameworks for modern data analysis,
-          combining tools from probability theory, functional analysis, and convex
-          optimization. I am particularly interested in the theoretical underpinnings
-          of deep learning and Bayesian inference at scale.
+          My primary research focuses on <strong>dual-wind discontinuous Galerkin methods</strong>
+          for elliptic variational inequalities and Hamilton-Jacobi equations, as well as
+          <strong>biomedical and public health data science</strong> — particularly
+          electronic health record analysis and AI/ML models for underrepresented populations.
         </p>
         <p>
-          I am affiliated with the <strong>[Institute/Center Name]</strong> and serve on
-          the editorial board of the <em>Journal of [Field]</em>.
+          I am a co-PI on an NIH AIM-AHEAD award supporting AI/ML health equity research
+          in the U.S. Virgin Islands, and a participant in the NSF EPSCoR RISE RII program.
+          I am deeply committed to open education, social justice in STEM, and mentoring
+          undergraduate researchers.
         </p>
       </div>
       <div class="about-grid">
         <div class="about-card">
           <h3>Research Interests</h3>
           <ul>
-            <li>Statistical Learning Theory</li>
-            <li>High-Dimensional Probability</li>
-            <li>Convex &amp; Non-Convex Optimization</li>
-            <li>Bayesian Nonparametrics</li>
-            <li>Algorithmic Fairness</li>
+            <li>Biomedical &amp; Public Health Data Science</li>
+            <li>Numerical Solutions to PDEs</li>
+            <li>Finite &amp; Discontinuous Galerkin Methods</li>
+            <li>Electronic Health Record Analysis</li>
+            <li>Machine Learning &amp; Optimal Control</li>
+            <li>Social Justice in STEM</li>
           </ul>
         </div>
         <div class="about-card">
           <h3>Education</h3>
           <ul>
-            <li>Ph.D. Mathematics — MIT, 2014</li>
-            <li>M.S. Statistics — Stanford, 2010</li>
-            <li>B.S. Mathematics — [University], 2008</li>
+            <li>Ph.D. Computational Mathematics — UNCG, 2020</li>
+            <li>M.S. Applied Mathematics — Western Carolina, 2015</li>
+            <li>B.S. Mathematics — Mars Hill University, 2013</li>
           </ul>
         </div>
       </div>
@@ -690,57 +673,74 @@
       <div class="pub-list">
 
         <div class="pub-item">
-          <div class="pub-year">2024</div>
+          <div class="pub-year">2023</div>
           <div>
-            <div class="pub-title">Sharp Convergence Rates for Stochastic Gradient Descent in Non-Convex Landscapes</div>
-            <div class="pub-authors">Your Name, Co-Author A, Co-Author B</div>
-            <div class="pub-venue">Annals of Statistics, Vol. 52, No. 3 — <em>peer-reviewed</em></div>
-            <div class="pub-links">
-              <a href="#">PDF</a>
-              <a href="#">arXiv</a>
-              <a href="#">DOI</a>
-            </div>
+            <div class="pub-title">Convergence analysis of a symmetric dual-wind discontinuous Galerkin method for a parabolic variational inequality</div>
+            <div class="pub-authors">S. B. Boyana, T. Lewis, A. Rapp, and Y. Zhang</div>
+            <div class="pub-venue">Journal of Computational and Applied Mathematics, vol. 422, p. 114922</div>
           </div>
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2023</div>
           <div>
-            <div class="pub-title">Minimax Optimal Estimation in High-Dimensional Gaussian Regression with Structured Sparsity</div>
-            <div class="pub-authors">Your Name, Co-Author C</div>
-            <div class="pub-venue">Journal of Machine Learning Research, Vol. 24 — <em>peer-reviewed</em></div>
-            <div class="pub-links">
-              <a href="#">PDF</a>
-              <a href="#">arXiv</a>
-              <a href="#">Code</a>
-            </div>
+            <div class="pub-title">Consistency results for the dual-wind discontinuous Galerkin method</div>
+            <div class="pub-authors">T. Lewis, A. Rapp, and Y. Zhang</div>
+            <div class="pub-venue">Journal of Computational and Applied Mathematics, vol. 431, p. 115257</div>
           </div>
         </div>
 
         <div class="pub-item">
           <div class="pub-year">2022</div>
           <div>
-            <div class="pub-title">Uncertainty Quantification for Deep Neural Networks via Functional Bayesian Methods</div>
-            <div class="pub-authors">Co-Author D, Your Name, Co-Author E</div>
-            <div class="pub-venue">NeurIPS 2022 — <em>peer-reviewed conference</em></div>
-            <div class="pub-links">
-              <a href="#">PDF</a>
-              <a href="#">Poster</a>
-              <a href="#">Talk</a>
-            </div>
+            <div class="pub-title">Dual-wind discontinuous Galerkin methods for stationary Hamilton-Jacobi equations and regularized Hamilton-Jacobi equations</div>
+            <div class="pub-authors">X. Feng, T. Lewis, and A. Rapp</div>
+            <div class="pub-venue">Communications on Applied Mathematics and Computation, vol. 4, no. 2, pp. 563–596</div>
           </div>
         </div>
 
         <div class="pub-item">
-          <div class="pub-year">2021</div>
+          <div class="pub-year">2022</div>
           <div>
-            <div class="pub-title">On the Implicit Regularization of SGD for Matrix Sensing</div>
-            <div class="pub-authors">Your Name, Co-Author F</div>
-            <div class="pub-venue">Foundations of Computational Mathematics — <em>peer-reviewed</em></div>
-            <div class="pub-links">
-              <a href="#">PDF</a>
-              <a href="#">arXiv</a>
-            </div>
+            <div class="pub-title">Penalty parameter and dual-wind discontinuous Galerkin approximation methods for elliptic second order PDEs</div>
+            <div class="pub-authors">T. Lewis, A. Rapp, and Y. Zhang</div>
+            <div class="pub-venue">Electronic Journal of Differential Equations, vol. Conference 26, pp. 123–138</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2020</div>
+          <div>
+            <div class="pub-title">Convergence analysis of symmetric dual-wind discontinuous Galerkin approximation methods for the obstacle problem</div>
+            <div class="pub-authors">T. Lewis, A. Rapp, and Y. Zhang</div>
+            <div class="pub-venue">Journal of Mathematical Analysis and Applications, vol. 485, no. 2, p. 123840</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2016</div>
+          <div>
+            <div class="pub-title">Hypergraph Ramsey numbers involving paths</div>
+            <div class="pub-authors">M. Budden, J. Hiller, and A. Rapp</div>
+            <div class="pub-venue">Acta Universitatis Apulensis, vol. 48, pp. 75–87</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2015</div>
+          <div>
+            <div class="pub-title">Generalized Ramsey theorems for r-uniform hypergraphs</div>
+            <div class="pub-authors">M. Budden, J. Hiller, and A. Rapp</div>
+            <div class="pub-venue">Australasian Journal of Combinatorics, vol. 63, pp. 142–152</div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2015</div>
+          <div>
+            <div class="pub-title">Constructing r-uniform hypergraphs with restricted clique numbers</div>
+            <div class="pub-authors">M. Budden and A. Rapp</div>
+            <div class="pub-venue">The North Carolina Journal of Mathematics and Statistics, vol. 1, pp. 30–34</div>
           </div>
         </div>
 
@@ -758,61 +758,108 @@
       <div class="cv-section">
         <h3>Academic Positions</h3>
         <div class="cv-entry">
-          <div class="cv-date">2018 — Present</div>
+          <div class="cv-date">2025 — Present</div>
           <div>
-            <div class="cv-role">Associate Professor</div>
-            <div class="cv-inst">Department of Mathematics, University Name</div>
+            <div class="cv-role">Assistant Professor of Mathematics</div>
+            <div class="cv-inst">Winston-Salem State University</div>
           </div>
         </div>
         <div class="cv-entry">
-          <div class="cv-date">2015 — 2018</div>
+          <div class="cv-date">2022 — 2025</div>
           <div>
-            <div class="cv-role">Postdoctoral Fellow</div>
-            <div class="cv-inst">Institute Name, University</div>
-            <div class="cv-desc">Mentor: Professor [Name]</div>
+            <div class="cv-role">Data Science Program Coordinator</div>
+            <div class="cv-inst">University of the Virgin Islands</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2020 — 2025</div>
+          <div>
+            <div class="cv-role">Assistant Professor of Mathematics</div>
+            <div class="cv-inst">University of the Virgin Islands</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2017 — 2019</div>
+          <div>
+            <div class="cv-role">Lecturer, Residential Colleges</div>
+            <div class="cv-inst">The University of North Carolina at Greensboro</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2016 — 2020</div>
+          <div>
+            <div class="cv-role">Graduate Teaching Assistant / Associate</div>
+            <div class="cv-inst">Department of Mathematics and Statistics, UNCG</div>
           </div>
         </div>
       </div>
 
       <div class="cv-section">
-        <h3>Grants &amp; Awards</h3>
+        <h3>Grants (PI or Co-PI)</h3>
+        <div class="cv-entry">
+          <div class="cv-date">2025 — Present</div>
+          <div>
+            <div class="cv-role">OIA – EPSCoR RISE RII ($7,000,000)</div>
+            <div class="cv-inst">Establishment of the U.S. Virgin Islands Center for Autonomous Research for a New Era of Ecological Marine Science and Workforce Development</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2024 — Present</div>
+          <div>
+            <div class="cv-role">NIH AIM-AHEAD Program ($387,388)</div>
+            <div class="cv-inst">Advancing Health Equity and Inclusion in the USVI: AI/ML Models for Underrepresented Populations</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2022 — 2025</div>
+          <div>
+            <div class="cv-role">U.S. Dept. of Education Title III Part B ($513,562)</div>
+            <div class="cv-inst">Increasing the Reach and Effectiveness of the UVI Data Science Program</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2022</div>
+          <div>
+            <div class="cv-role">VI NASA EPSCoR Research Initiation Award ($20,000)</div>
+            <div class="cv-inst">A New Approximation Method for Hamilton-Jacobi Equations</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Selected Awards &amp; Recognition</h3>
+        <div class="cv-entry">
+          <div class="cv-date">2025</div>
+          <div>
+            <div class="cv-role">Best Poster Presentation Award</div>
+            <div class="cv-inst">AIM-AHEAD Annual Meeting</div>
+          </div>
+        </div>
         <div class="cv-entry">
           <div class="cv-date">2023</div>
           <div>
-            <div class="cv-role">NSF CAREER Award</div>
-            <div class="cv-inst">National Science Foundation</div>
-            <div class="cv-desc">$500,000 — Mathematical Foundations of Scalable Bayesian Inference</div>
+            <div class="cv-role">SIAM Early Career Travel Award</div>
+            <div class="cv-inst">Society for Industrial and Applied Mathematics</div>
           </div>
         </div>
         <div class="cv-entry">
           <div class="cv-date">2020</div>
           <div>
-            <div class="cv-role">Sloan Research Fellowship</div>
-            <div class="cv-inst">Alfred P. Sloan Foundation</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <h3>Service</h3>
-        <div class="cv-entry">
-          <div class="cv-date">2022 — Present</div>
-          <div>
-            <div class="cv-role">Associate Editor</div>
-            <div class="cv-inst">Journal of the American Statistical Association</div>
+            <div class="cv-role">Project NExT Fellow</div>
+            <div class="cv-inst">Mathematical Association of America</div>
           </div>
         </div>
         <div class="cv-entry">
-          <div class="cv-date">2019 — Present</div>
+          <div class="cv-date">2018–2020</div>
           <div>
-            <div class="cv-role">Area Chair</div>
-            <div class="cv-inst">NeurIPS, ICML</div>
+            <div class="cv-role">Lula Martin McIver Fellowship</div>
+            <div class="cv-inst">UNCG Graduate School</div>
           </div>
         </div>
       </div>
 
       <div class="cv-download">
-        <a href="cv.pdf" class="btn">↓ Download Full CV (PDF)</a>
+        <a href="Rapp_Full_CV__2026_.pdf" class="btn">↓ Download Full CV (PDF)</a>
       </div>
     </section>
 
@@ -826,38 +873,56 @@
       <div class="teaching-grid">
 
         <div class="course-item">
-          <div class="course-code">MATH 401</div>
+          <div class="course-code">MAT 4311</div>
           <div>
-            <div class="course-name">Real Analysis I</div>
-            <div class="course-desc">Foundations of real analysis: metric spaces, limits, continuity, differentiation, and the Riemann integral. Emphasis on rigorous proof-writing.</div>
-            <div class="course-meta">Fall 2024 · Undergraduate · 3 Credits</div>
+            <div class="course-name">Real Variables</div>
+            <div class="course-desc">Advanced treatment of real analysis including metric spaces, measure theory, and integration, with emphasis on rigorous mathematical reasoning.</div>
+            <div class="course-meta">Spring 2026 · Winston-Salem State University</div>
           </div>
         </div>
 
         <div class="course-item">
-          <div class="course-code">MATH 512</div>
+          <div class="course-code">MAT 3419</div>
           <div>
-            <div class="course-name">Statistical Learning Theory</div>
-            <div class="course-desc">Mathematical foundations of machine learning: PAC learning, Rademacher complexity, generalization bounds, kernel methods, and neural tangent kernels.</div>
-            <div class="course-meta">Spring 2024 · Graduate · 3 Credits</div>
+            <div class="course-name">Calculus III</div>
+            <div class="course-desc">Multivariable calculus: partial derivatives, multiple integrals, vector calculus, and theorems of Green, Stokes, and Gauss.</div>
+            <div class="course-meta">Spring 2026 · Winston-Salem State University</div>
           </div>
         </div>
 
         <div class="course-item">
-          <div class="course-code">DATA 301</div>
+          <div class="course-code">CSC/IST 435</div>
           <div>
-            <div class="course-name">Probability &amp; Inference for Data Science</div>
-            <div class="course-desc">Probability theory, likelihood methods, Bayesian inference, and computational techniques for modern data analysis.</div>
-            <div class="course-meta">Fall 2023 &amp; 2024 · Undergraduate · 3 Credits</div>
+            <div class="course-name">Data Science II</div>
+            <div class="course-desc">Advanced data science methods including machine learning models, data pipelines, and applied analysis of real-world datasets.</div>
+            <div class="course-meta">Spring 2024, 2023 · University of the Virgin Islands</div>
           </div>
         </div>
 
         <div class="course-item">
-          <div class="course-code">MATH 620</div>
+          <div class="course-code">MAT 325</div>
           <div>
-            <div class="course-name">Topics in High-Dimensional Probability</div>
-            <div class="course-desc">Advanced seminar: concentration inequalities, random matrix theory, Gaussian processes, and applications to statistics and learning theory.</div>
-            <div class="course-meta">Spring 2023 · Graduate · 3 Credits · Topics course</div>
+            <div class="course-name">Numerical Analysis</div>
+            <div class="course-desc">Computational methods for solving mathematical problems: root-finding, interpolation, numerical integration, and numerical solutions to ODEs.</div>
+            <div class="course-meta">Fall 2024 · University of the Virgin Islands</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-code">MAT 346</div>
+          <div>
+            <div class="course-name">Differential Equations</div>
+            <div class="course-desc">Theory and applications of ordinary differential equations, including first-order equations, linear systems, and Laplace transforms.</div>
+            <div class="course-meta">Spring 2024, 2022 · University of the Virgin Islands</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-code">MAT 261</div>
+          <div>
+            <div class="course-name">Linear Algebra</div>
+            <div class="course-desc">Vector spaces, linear transformations, matrix theory, eigenvalues and eigenvectors, and applications to data science and engineering.</div>
+            <div class="course-meta">Fall 2023, 2022, 2020 · University of the Virgin Islands</div>
           </div>
         </div>
 
@@ -874,35 +939,26 @@
       <div class="contact-grid">
         <div class="contact-body">
           <p>
-            I welcome inquiries from prospective graduate students and postdoctoral
-            researchers with strong backgrounds in mathematics, statistics, or
-            theoretical computer science.
+            I welcome inquiries from students interested in undergraduate research
+            in mathematics, data science, or biomedical applications, particularly
+            those from underrepresented groups in STEM.
           </p>
           <p>
-            For general correspondence, email is the most reliable way to reach me.
-            I aim to respond within one week.
+            For general correspondence, email is the best way to reach me.
           </p>
         </div>
         <ul class="contact-list">
           <li>
             <span class="contact-label">Email</span>
-            <span class="contact-val"><a href="mailto:you@university.edu">you@university.edu</a></span>
+            <span class="contact-val"><a href="mailto:rappa@wssu.edu">rappa@wssu.edu</a></span>
           </li>
           <li>
-            <span class="contact-label">Office</span>
-            <span class="contact-val">Room 314, Mathematics Building<br>University Name</span>
+            <span class="contact-label">Address</span>
+            <span class="contact-val">601 S Martin Luther King Jr Dr<br>Winston-Salem, NC 27110</span>
           </li>
           <li>
-            <span class="contact-label">Hours</span>
-            <span class="contact-val">Tues &amp; Thurs 2–4 pm<br>or by appointment</span>
-          </li>
-          <li>
-            <span class="contact-label">ORCID</span>
-            <span class="contact-val"><a href="#">0000-0000-0000-0000</a></span>
-          </li>
-          <li>
-            <span class="contact-label">GitHub</span>
-            <span class="contact-val"><a href="#">github.com/yourname</a></span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-val"><a href="#">LinkedIn Profile</a></span>
           </li>
           <li>
             <span class="contact-label">Scholar</span>
@@ -913,15 +969,14 @@
     </section>
 
     <footer>
-      <span>© 2025 Dr. Your Name</span>
-      <span>Mathematics &amp; Data Science · University Name</span>
+      <span>© 2026 Dr. Aaron Rapp</span>
+      <span>Mathematics &amp; Data Science · Winston-Salem State University</span>
     </footer>
 
   </main>
 </div>
 
 <script>
-  // Scroll-based fade-in
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -933,7 +988,6 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Active nav link on scroll
   const sections = document.querySelectorAll('section[id], .hero');
   const navLinks = document.querySelectorAll('nav a');
 
