@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. [Your Name] — Mathematics & Data Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1612;
+      --ink-light: #4a4540;
+      --ink-faint: #8a847e;
+      --paper: #f9f6f0;
+      --paper-warm: #f0ebe0;
+      --rule: #d4cfc8;
+      --accent: #8b1a1a;
+      --accent-light: #c0392b;
+      --accent-faint: rgba(139, 26, 26, 0.08);
+      --serif: 'EB Garamond', Georgia, serif;
+      --serif-alt: 'Libre Baskerville', serif;
+      --mono: 'Source Code Pro', monospace;
+      --max-w: 860px;
+      --side-w: 240px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ── LAYOUT ── */
+    .site-wrapper {
+      display: grid;
+      grid-template-columns: var(--side-w) 1fr;
+      min-height: 100vh;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      border-right: 1px solid var(--rule);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      background: var(--paper);
+      z-index: 10;
+    }
+
+    .sidebar-monogram {
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-alt);
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .sidebar-name {
+      font-family: var(--serif-alt);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+
+    .sidebar-role {
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    nav a {
+      font-family: var(--serif-alt);
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-decoration: none;
+      color: var(--ink-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    nav a::before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+
+    nav a:hover::before, nav a.active::before {
+      opacity: 1;
+    }
+
+    .sidebar-contact {
+      margin-top: auto;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      line-height: 2;
+    }
+
+    .sidebar-contact a {
+      color: var(--ink-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sidebar-contact a:hover { color: var(--accent); }
+
+    /* ── MAIN ── */
+    main {
+      padding: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 4rem 4rem;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '∂∇∑∫λ';
+      position: absolute;
+      right: -1rem;
+      top: 1rem;
+      font-size: 9rem;
+      color: var(--accent);
+      opacity: 0.04;
+      font-family: var(--serif);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif-alt);
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem;
+      max-width: 520px;
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.2rem 0.65rem;
+      border-radius: 0;
+      background: var(--accent-faint);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 4rem 4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      font-family: var(--serif-alt);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── ABOUT ── */
+    .about-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-light);
+      max-width: 600px;
+    }
+
+    .about-body p + p { margin-top: 1.2em; }
+
+    .about-body strong { color: var(--ink); font-weight: 600; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .about-card {
+      border-top: 2px solid var(--accent);
+      padding-top: 1rem;
+    }
+
+    .about-card h3 {
+      font-family: var(--serif-alt);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-card ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 2;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pub-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1rem;
+      transition: background 0.2s;
+    }
+
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      padding-top: 0.25rem;
+      letter-spacing: 0.04em;
+    }
+
+    .pub-title {
+      font-family: var(--serif-alt);
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+
+    .pub-authors {
+      font-size: 0.88rem;
+      color: var(--ink-faint);
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-venue {
+      font-size: 0.85rem;
+      color: var(--ink-light);
+    }
+
+    .pub-venue em { color: var(--accent); font-style: normal; font-weight: 500; }
+
+    .pub-links {
+      margin-top: 0.6rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .pub-links a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.05rem;
+      transition: opacity 0.2s;
+    }
+
+    .pub-links a:hover { opacity: 0.65; }
+
+    /* ── CV ── */
+    .cv-section + .cv-section { margin-top: 2.5rem; }
+
+    .cv-section h3 {
+      font-family: var(--serif-alt);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1rem;
+      padding: 0.6rem 0;
+    }
+
+    .cv-date {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      padding-top: 0.15rem;
+      text-align: right;
+    }
+
+    .cv-role {
+      font-family: var(--serif-alt);
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .cv-inst {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-top: 0.1rem;
+    }
+
+    .cv-desc {
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      margin-top: 0.25rem;
+      line-height: 1.6;
+    }
+
+    .cv-download {
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--serif-alt);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--accent);
+      text-decoration: none;
+      padding: 0.7rem 1.4rem;
+      border: 2px solid var(--accent);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    /* ── TEACHING ── */
+    .teaching-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .course-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .course-item:last-child { border-bottom: none; }
+
+    .course-code {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      padding-top: 0.15rem;
+    }
+
+    .course-name {
+      font-family: var(--serif-alt);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .course-desc {
+      font-size: 0.87rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    .course-meta {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      font-family: var(--mono);
+      margin-top: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-body {
+      font-size: 0.98rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+    }
+
+    .contact-body p + p { margin-top: 1em; }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-list li {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+    }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 0.1rem;
+    }
+
+    .contact-val { color: var(--ink-light); }
+    .contact-val a {
+      color: var(--ink-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-val a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.5rem 4rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.06em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      .site-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 2rem 1.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      nav { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+      .sidebar-contact { display: none; }
+      section, .hero { padding: 2.5rem 1.5rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero::before { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .cv-entry { grid-template-columns: 1fr; }
+      .cv-date { text-align: left; }
+      .course-item { grid-template-columns: 1fr; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div>
+      <div class="sidebar-monogram">YN</div>
+    </div>
+    <div>
+      <div class="sidebar-name">Dr. Your Name</div>
+      <div class="sidebar-role">Associate Professor<br>Mathematics & Data Science</div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">Curriculum Vitæ</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="sidebar-contact">
+      <a href="mailto:you@university.edu">you@university.edu</a><br>
+      Department of Mathematics<br>
+      University Name<br>
+      City, State
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <div class="hero fade-in">
+      <div class="hero-eyebrow">Mathematics &amp; Data Science</div>
+      <h1>Dr. Your Full Name</h1>
+      <p class="hero-bio">
+        Associate Professor at the Department of Mathematics, University Name.
+        My research lies at the intersection of <strong>applied mathematics</strong> and
+        <strong>statistical learning theory</strong>, with a focus on high-dimensional
+        data, optimization, and uncertainty quantification.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">Machine Learning Theory</span>
+        <span class="tag">High-Dimensional Statistics</span>
+        <span class="tag">Optimization</span>
+        <span class="tag">Probabilistic Methods</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade-in">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>About</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="about-body">
+        <p>
+          I am an Associate Professor in the Department of Mathematics at University Name,
+          where I have been a faculty member since 2018. Before joining University Name,
+          I completed my Ph.D. at [Graduate Institution] under the supervision of
+          Professor [Advisor Name], and held a postdoctoral fellowship at [Institution].
+        </p>
+        <p>
+          My research develops rigorous mathematical frameworks for modern data analysis,
+          combining tools from probability theory, functional analysis, and convex
+          optimization. I am particularly interested in the theoretical underpinnings
+          of deep learning and Bayesian inference at scale.
+        </p>
+        <p>
+          I am affiliated with the <strong>[Institute/Center Name]</strong> and serve on
+          the editorial board of the <em>Journal of [Field]</em>.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Research Interests</h3>
+          <ul>
+            <li>Statistical Learning Theory</li>
+            <li>High-Dimensional Probability</li>
+            <li>Convex &amp; Non-Convex Optimization</li>
+            <li>Bayesian Nonparametrics</li>
+            <li>Algorithmic Fairness</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Education</h3>
+          <ul>
+            <li>Ph.D. Mathematics — MIT, 2014</li>
+            <li>M.S. Statistics — Stanford, 2010</li>
+            <li>B.S. Mathematics — [University], 2008</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="fade-in">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Publications</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Sharp Convergence Rates for Stochastic Gradient Descent in Non-Convex Landscapes</div>
+            <div class="pub-authors">Your Name, Co-Author A, Co-Author B</div>
+            <div class="pub-venue">Annals of Statistics, Vol. 52, No. 3 — <em>peer-reviewed</em></div>
+            <div class="pub-links">
+              <a href="#">PDF</a>
+              <a href="#">arXiv</a>
+              <a href="#">DOI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Minimax Optimal Estimation in High-Dimensional Gaussian Regression with Structured Sparsity</div>
+            <div class="pub-authors">Your Name, Co-Author C</div>
+            <div class="pub-venue">Journal of Machine Learning Research, Vol. 24 — <em>peer-reviewed</em></div>
+            <div class="pub-links">
+              <a href="#">PDF</a>
+              <a href="#">arXiv</a>
+              <a href="#">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2022</div>
+          <div>
+            <div class="pub-title">Uncertainty Quantification for Deep Neural Networks via Functional Bayesian Methods</div>
+            <div class="pub-authors">Co-Author D, Your Name, Co-Author E</div>
+            <div class="pub-venue">NeurIPS 2022 — <em>peer-reviewed conference</em></div>
+            <div class="pub-links">
+              <a href="#">PDF</a>
+              <a href="#">Poster</a>
+              <a href="#">Talk</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-year">2021</div>
+          <div>
+            <div class="pub-title">On the Implicit Regularization of SGD for Matrix Sensing</div>
+            <div class="pub-authors">Your Name, Co-Author F</div>
+            <div class="pub-venue">Foundations of Computational Mathematics — <em>peer-reviewed</em></div>
+            <div class="pub-links">
+              <a href="#">PDF</a>
+              <a href="#">arXiv</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="fade-in">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Curriculum Vitæ</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Academic Positions</h3>
+        <div class="cv-entry">
+          <div class="cv-date">2018 — Present</div>
+          <div>
+            <div class="cv-role">Associate Professor</div>
+            <div class="cv-inst">Department of Mathematics, University Name</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2015 — 2018</div>
+          <div>
+            <div class="cv-role">Postdoctoral Fellow</div>
+            <div class="cv-inst">Institute Name, University</div>
+            <div class="cv-desc">Mentor: Professor [Name]</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Grants &amp; Awards</h3>
+        <div class="cv-entry">
+          <div class="cv-date">2023</div>
+          <div>
+            <div class="cv-role">NSF CAREER Award</div>
+            <div class="cv-inst">National Science Foundation</div>
+            <div class="cv-desc">$500,000 — Mathematical Foundations of Scalable Bayesian Inference</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2020</div>
+          <div>
+            <div class="cv-role">Sloan Research Fellowship</div>
+            <div class="cv-inst">Alfred P. Sloan Foundation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Service</h3>
+        <div class="cv-entry">
+          <div class="cv-date">2022 — Present</div>
+          <div>
+            <div class="cv-role">Associate Editor</div>
+            <div class="cv-inst">Journal of the American Statistical Association</div>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-date">2019 — Present</div>
+          <div>
+            <div class="cv-role">Area Chair</div>
+            <div class="cv-inst">NeurIPS, ICML</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-download">
+        <a href="cv.pdf" class="btn">↓ Download Full CV (PDF)</a>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="fade-in">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Teaching</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="teaching-grid">
+
+        <div class="course-item">
+          <div class="course-code">MATH 401</div>
+          <div>
+            <div class="course-name">Real Analysis I</div>
+            <div class="course-desc">Foundations of real analysis: metric spaces, limits, continuity, differentiation, and the Riemann integral. Emphasis on rigorous proof-writing.</div>
+            <div class="course-meta">Fall 2024 · Undergraduate · 3 Credits</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-code">MATH 512</div>
+          <div>
+            <div class="course-name">Statistical Learning Theory</div>
+            <div class="course-desc">Mathematical foundations of machine learning: PAC learning, Rademacher complexity, generalization bounds, kernel methods, and neural tangent kernels.</div>
+            <div class="course-meta">Spring 2024 · Graduate · 3 Credits</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-code">DATA 301</div>
+          <div>
+            <div class="course-name">Probability &amp; Inference for Data Science</div>
+            <div class="course-desc">Probability theory, likelihood methods, Bayesian inference, and computational techniques for modern data analysis.</div>
+            <div class="course-meta">Fall 2023 &amp; 2024 · Undergraduate · 3 Credits</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-code">MATH 620</div>
+          <div>
+            <div class="course-name">Topics in High-Dimensional Probability</div>
+            <div class="course-desc">Advanced seminar: concentration inequalities, random matrix theory, Gaussian processes, and applications to statistics and learning theory.</div>
+            <div class="course-meta">Spring 2023 · Graduate · 3 Credits · Topics course</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-in">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>Contact</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-body">
+          <p>
+            I welcome inquiries from prospective graduate students and postdoctoral
+            researchers with strong backgrounds in mathematics, statistics, or
+            theoretical computer science.
+          </p>
+          <p>
+            For general correspondence, email is the most reliable way to reach me.
+            I aim to respond within one week.
+          </p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-val"><a href="mailto:you@university.edu">you@university.edu</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Office</span>
+            <span class="contact-val">Room 314, Mathematics Building<br>University Name</span>
+          </li>
+          <li>
+            <span class="contact-label">Hours</span>
+            <span class="contact-val">Tues &amp; Thurs 2–4 pm<br>or by appointment</span>
+          </li>
+          <li>
+            <span class="contact-label">ORCID</span>
+            <span class="contact-val"><a href="#">0000-0000-0000-0000</a></span>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-val"><a href="#">github.com/yourname</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Scholar</span>
+            <span class="contact-val"><a href="#">Google Scholar Profile</a></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2025 Dr. Your Name</span>
+      <span>Mathematics &amp; Data Science · University Name</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Scroll-based fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], .hero');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const id = e.target.id || 'about';
+        const active = document.querySelector(`nav a[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
